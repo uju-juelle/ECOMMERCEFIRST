@@ -28,3 +28,15 @@ class Product(models.Model):
 
    def __str__(self):
       return self.name
+   
+
+
+class subscribers(models.Model):
+   name = models.CharField(max_length=100)
+   email = models.EmailField()
+
+   class Meta:
+      verbose_name_plural = "Subscribers"
+
+   def __str__(self):
+      return self.name

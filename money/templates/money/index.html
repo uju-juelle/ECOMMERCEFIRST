@@ -221,6 +221,7 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
+                            {% for product in mens_products %}
                             <div class="item">
                                 <div class="thumb">
                                     <div class="hover-content">
@@ -230,11 +231,11 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="money/single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="{% static 'money/assets/images/men-01.jpg' %}" alt="">
+                                    <img src="{{product.image.url}}" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>Classic Spring</h4>
-                                    <span>$120.00</span>
+                                    <h4>{{product.name}}</h4>
+                                    <span>${{product.price}}</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -244,7 +245,8 @@ https://templatemo.com/tm-571-hexashop
                                     </ul>
                                 </div>
                             </div>
-                            <div class="item">
+                            {% endfor %}
+                            <!-- <div class="item">
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
@@ -312,7 +314,7 @@ https://templatemo.com/tm-571-hexashop
                                         <li><i class="fa fa-star"></i></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -338,6 +340,7 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="women-item-carousel">
                         <div class="owl-women-item owl-carousel">
+                            {% for product in womens_products %}
                             <div class="item">
                                 <div class="thumb">
                                     <div class="hover-content">
@@ -347,11 +350,11 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="money/single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="{% static 'money/assets/images/women-01.jpg' %}" alt="">
+                                    <img src="{{product.image.url}}" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>New Green Jacket</h4>
-                                    <span>$75.00</span>
+                                    <h4>{{product.name}}</h4>
+                                    <span>${{product.price}}</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -361,7 +364,8 @@ https://templatemo.com/tm-571-hexashop
                                     </ul>
                                 </div>
                             </div>
-                            <div class="item">
+                            {% endfor %}
+                            <!-- <div class="item">
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
@@ -426,9 +430,9 @@ https://templatemo.com/tm-571-hexashop
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
+                                        <li><i class="fa fa-star"></i></li> -->
+                                    <!-- </ul>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -455,6 +459,7 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="kid-item-carousel">
                         <div class="owl-kid-item owl-carousel">
+                            {% for product in kids_products%}
                             <div class="item">
                                 <div class="thumb">
                                     <div class="hover-content">
@@ -464,11 +469,11 @@ https://templatemo.com/tm-571-hexashop
                                             <li><a href="money/single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="{% static 'money/assets/images/kid-01.jpg' %}" alt="">
+                                    <img src="{{product.image.url}}" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>School Collection</h4>
-                                    <span>$80.00</span>
+                                    <h4>{{product.name}}</h4>
+                                    <span>${{product.price}}</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -478,7 +483,8 @@ https://templatemo.com/tm-571-hexashop
                                     </ul>
                                 </div>
                             </div>
-                            <div class="item">
+                            {% endfor %}
+                            <!-- <div class="item">
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
@@ -545,7 +551,7 @@ https://templatemo.com/tm-571-hexashop
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -700,7 +706,8 @@ https://templatemo.com/tm-571-hexashop
                         <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
                         <span>Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
-                    <form id="subscribe" action="" method="get">
+                    <form id="subscribe" action="" method="POST">
+                        {% csrf_token %}
                         <div class="row">
                           <div class="col-lg-5">
                             <fieldset>
