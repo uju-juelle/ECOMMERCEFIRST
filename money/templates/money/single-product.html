@@ -58,7 +58,7 @@ https://templatemo.com/tm-571-hexashop
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="money/index.html" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home' %}" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="money/index.html">Men's</a></li>
                             <li class="scroll-to-section"><a href="money/index.html">Women's</a></li>
                             <li class="scroll-to-section"><a href="money/index.html">Kid's</a></li>
@@ -99,7 +99,7 @@ https://templatemo.com/tm-571-hexashop
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Single Product Page</h2>
+                        <h2>{{ myproduct.name}} Page</h2>
                         <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
                     </div>
                 </div>
@@ -115,14 +115,14 @@ https://templatemo.com/tm-571-hexashop
             <div class="row">
                 <div class="col-lg-8">
                 <div class="left-images">
-                    <img src="{% static 'money/assets/images/single-product-01.jpg' %}" alt="">
-                    <img src="{% static 'money/assets/images/single-product-02.jpg' %}" alt="">
+                    <img src="{{ myproduct.image.url }}" alt="">
+                    <!-- <img src="{% static 'money/assets/images/single-product-02.jpg' %}" alt=""> -->
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="right-content">
-                    <h4>New Green Jacket</h4>
-                    <span class="price">$75.00</span>
+                    <h4>{{ myproduct.name}}</h4>
+                    <span class=${{ myproduct.price}}</span>
                     <ul class="stars">
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
@@ -130,9 +130,9 @@ https://templatemo.com/tm-571-hexashop
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                     </ul>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
+                    <span>{{ myproduct.description}}</span>
                     <div class="quote">
-                        <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>
+                        <i class="fa fa-quote-left"></i><p>{{ myproduct.description}}</p>
                     </div>
                     <div class="quantity-content">
                         <div class="left-content">
@@ -145,7 +145,7 @@ https://templatemo.com/tm-571-hexashop
                         </div>
                     </div>
                     <div class="total">
-                        <h4>Total: $210.00</h4>
+                        <h4>${{ myproduct.price}}</h4>
                         <div class="main-border-button"><a href="#">Add To Cart</a></div>
                     </div>
                 </div>

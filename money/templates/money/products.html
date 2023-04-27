@@ -58,16 +58,16 @@ https://templatemo.com/tm-571-hexashop
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="money/index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="money/index.html">Men's</a></li>
-                            <li class="scroll-to-section"><a href="money/index.html">Women's</a></li>
-                            <li class="scroll-to-section"><a href="money/index.html">Kid's</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home' %}" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home' %}">Men's</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home' %}">Women's</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home' %}">Kid's</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
-                                    <li><a href="money/about.html">About Us</a></li>
-                                    <li><a href="money/products.html">Products</a></li>
-                                    <li><a href="money/single-product.html">Single Product</a></li>
+                                    <li><a href="{% url 'about' %}">About Us</a></li>
+                                    <li><a href="{% url 'products' %}">Products</a></li>
+                                    <!-- <li><a href="money/single-product.html">Single Product</a></li> -->
                                     <li><a href="money/contact.html">Contact Us</a></li>
                                 </ul>
                             </li>
@@ -80,7 +80,7 @@ https://templatemo.com/tm-571-hexashop
                                     <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="money/index.html">Explore</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home' %}">Explore</a></li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -128,16 +128,16 @@ https://templatemo.com/tm-571-hexashop
                         <div class="thumb">
                             <div class="hover-content">
                                 <ul>
-                                    <li><a href="money/single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="money/single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="money/single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="" ><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" ><i class="fa fa-star"></i></a></li>
+                                    <li><a href="" ><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="{% static 'money/assets/images/men-01.jpg' %}" alt="">
+                        <img src="{% static 'money/assets/images/men-01.jpg' %}" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Classic Spring</h4>
-                            <span>$120.00</span>
+                            <h4>{{ products.name}}</h4>
+                            <span>${{products.price}}</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>

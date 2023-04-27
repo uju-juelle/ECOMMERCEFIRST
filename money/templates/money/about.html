@@ -261,7 +261,8 @@ https://templatemo.com/tm-571-hexashop
                         <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
                         <span>Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
-                    <form id="subscribe" action="" method="get">
+                    <form id="subscribe" action="" method="POST">
+                        {% csrf_token %}
                         <div class="row">
                           <div class="col-lg-5">
                             <fieldset>
@@ -331,8 +332,8 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-3">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="{% url 'home' %}">Homepage</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
                         <li><a href="#">Help</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>

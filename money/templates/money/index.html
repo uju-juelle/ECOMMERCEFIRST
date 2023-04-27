@@ -65,9 +65,9 @@ https://templatemo.com/tm-571-hexashop
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
-                                    <li><a href="money/about.html">About Us</a></li>
+                                    <li><a href="{% url 'about' %}">About Us</a></li>
                                     <li><a href="money/products.html">Products</a></li>
-                                    <li><a href="money/single-product.html">Single Product</a></li>
+                                    <!-- <li><a href="">Single Product</a></li> -->
                                     <li><a href="money/contact.html">Contact Us</a></li>
                                 </ul>
                             </li>
@@ -226,15 +226,15 @@ https://templatemo.com/tm-571-hexashop
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="money/single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="money/single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="money/single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="{% url 'single' product.pk %}"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="{% url 'single' product.pk %}"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="{% url 'single' product.pk %}"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
-                                    <img src="{{product.image.url}}" alt="">
+                                   <a href="{% url 'single' product.pk %}"> <img src="{{product.image.url}}" alt=""></a>
                                 </div>
                                 <div class="down-content">
-                                    <h4>{{product.name}}</h4>
+                                    <h4><a class="article-title" href="{% url 'single' product.id %}">{{product.name}}</a></h4>
                                     <span>${{product.price}}</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
@@ -575,7 +575,7 @@ https://templatemo.com/tm-571-hexashop
                         <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
                         <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
                         <div class="main-border-button">
-                            <a href="money/products.html">Discover More</a>
+                            <a href="{% url 'products' %}">Discover More</a>
                         </div>
                     </div>
                 </div>
@@ -777,8 +777,8 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-3">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="{% url 'home' %}">Homepage</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
                         <li><a href="#">Help</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
