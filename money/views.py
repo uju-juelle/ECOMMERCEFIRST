@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -59,3 +60,27 @@ def products_page(request):
         "products": products
     }
     return render(request, "money/products.html", context)
+
+
+
+def Contact_page(request):
+    
+    if request.method == "GET":
+        form = ContactForm()
+    elif request.method == "POST":
+       
+        form = ContactForm(request.POST)
+        if form.is_valid(): 
+          form.save()
+        #   contact_name = form.cleaned_data["name"]
+        #   contact_email = form.cleaned_data["email"]
+        #   contact_subject = form.cleaned_data["subject"]
+        #   contact_message = form.cleaned_data["message"]
+
+        #   Contact.objects.create(name=contact_name, email=contact_email, subject=contact_subject, message=contact_message)
+          return redirect("contactt")
+    context = {
+    "form": form
+    }
+    
+    return render(request, "money/contact2.html", context)
