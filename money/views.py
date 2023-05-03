@@ -25,7 +25,7 @@ def home_page(request):
         return redirect("home")
         # return HttpResponse("You have subscribed Succcessfully")
 
-    return render(request, "money/index.html", context
+    return render(request, "money/index.html", context)
 
 def about(request):
     if request.method == "GET":
