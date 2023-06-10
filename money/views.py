@@ -72,8 +72,8 @@ def Contact_page(request):
         form = ContactForm(request.POST)
         if form.is_valid(): 
           form.save()
-          contact_name = form.cleaned_data["name"]
-          contact_email = form.cleaned_data["email"]
+        #   contact_name = form.cleaned_data["name"]
+        #   contact_email = form.cleaned_data["email"]
         #   contact_subject = form.cleaned_data["subject"]
         #   contact_message = form.cleaned_data["message"]
 
