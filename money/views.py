@@ -72,12 +72,12 @@ def Contact_page(request):
         form = ContactForm(request.POST)
         if form.is_valid(): 
           form.save()
-        #   contact_name = form.cleaned_data["name"]
-        #   contact_email = form.cleaned_data["email"]
-        #   contact_subject = form.cleaned_data["subject"]
-        #   contact_message = form.cleaned_data["message"]
+          contact_name = form.cleaned_data["name"]
+          contact_email = form.cleaned_data["email"]
+          contact_subject = form.cleaned_data["subject"]
+          contact_message = form.cleaned_data["message"]
 
-        #   Contact.objects.create(name=contact_name, email=contact_email, subject=contact_subject, message=contact_message)
+          Contact.objects.create(name=contact_name, email=contact_email, subject=contact_subject, message=contact_message)
           return redirect("contactt")
     context = {
     "form": form
